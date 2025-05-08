@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VCA Travel ER Program</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --vca-blue: #003B71;
+      --vca-blue-rgb: 0,59,113;
+      --vca-coral: #E05A3F;
+      --vca-purple: #A2689E;
+      --vca-teal: #45C5D4;
+      --radius: 8px;
+      --transition: 0.3s;
+      --font-family: 'Montserrat', sans-serif;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-family);
+      color: #333;
+      background: #fafafa;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(var(--vca-blue-rgb), 0.9);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+    header img {
+      height: 45px;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    nav ul li + li {
+      margin-left: 1.5rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      transition: color var(--transition);
+    }
+    nav a:hover {
+      color: var(--vca-coral);
+    }
+    .hero {
+      background: linear-gradient(135deg, var(--vca-teal), var(--vca-purple));
+      color: #fff;
+      text-align: center;
+      padding: 6rem 0;
+    }
+    .hero .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin-bottom: 2rem;
+    }
+    .btn {
+      background: var(--vca-coral);
+      color: #fff;
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      font-size: 1rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: filter var(--transition), transform var(--transition);
+    }
+    .btn:hover {
+      filter: brightness(1.1);
+      transform: translateY(-2px);
+    }
+    section { padding: 4rem 0; }
+    section:nth-of-type(even) { background: #f9f9f9; }
+    section h2 {
+      font-size: 2.5rem;
+      color: var(--vca-blue);
+      margin-bottom: 1rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+    section h2::after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background: var(--vca-coral);
+      bottom: 0;
+      left: 0;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+    .card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    .card h3 {
+      margin-bottom: 0.75rem;
+      color: var(--vca-purple);
+      font-size: 1.25rem;
+    }
+    .card p,
+    .card ul { font-size: 1rem; }
+    .card ul li { margin-bottom: 0.5rem; }
+    footer {
+      background: #fff;
+      text-align: center;
+      padding: 2rem 0;
+      font-size: 0.9rem;
+      color: #777;
+      border-top: 1px solid #eaeaea;
+    }
+    @media (min-width: 768px) {
+      .hero h1 { font-size: 4rem; }
+      .hero p { font-size: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <img src="assets/VCA_logo.svg.png" alt="VCA Logo">
+      <nav>
+        <ul>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#benefits">Benefits</a></li>
+          <li><a href="#logistics">Logistics</a></li>
+          <li><a href="#onboarding">Onboarding</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>VCA Travel ER Doctor Program</h1>
+      <p>A flexible, rewarding opportunity for ER veterinarians to support VCA hospitals nationwide. Learn how it works, benefits, and logistics.</p>
+      <button class="btn" onclick="location.href='#overview'">Learn More</button>
+    </div>
+  </section>
+
+  <section id="overview">
+    <div class="container">
+      <h2>Program Overview</h2>
+      <p>Our Travel ER Doctor Program connects experienced ER veterinarians with relief shifts across VCA hospitals. Whether you're seeking variety, extra income, or to help where it's needed most, this program offers flexibility and comprehensive support.</p>
+    </div>
+  </section>
+
+  <section id="benefits">
+    <div class="container">
+      <h2>Compensation & Benefits</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Compensation</h3>
+          <ul>
+            <li>10 shifts per 4-week period: $200,000 annually</li>
+            <li>12 shifts per 4-week period: $230,000 annually</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>PTO & CE</h3>
+          <ul>
+            <li>Vacation: 2 weeks standard</li>
+            <li>Sick Days: 5 days</li>
+            <li>CE: $3,000 + 1 week (40 hours) CE time off</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Licensure</h3>
+          <ul>
+            <li>Reimbursement for DEA & initial two state license fees</li>
+            <li>Additional state licensure reimbursement available with a commitment of 12 shifts over 2–3 assignment periods</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="logistics">
+    <div class="container">
+      <h2>Travel Logistics & Perks</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Ground Travel</h3>
+          <p>Reimbursed mileage if within a 4-hour drive; flights covered for distances over 4 hours.</p>
+        </div>
+        <div class="card">
+          <h3>Accommodations</h3>
+          <ul>
+            <li>Hotel night before if shift begins before 2pm</li>
+            <li>Hotel night after if shift ends after 2pm</li>
+            <li>Rental car expensed with prior approval</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Shift Requirements & Perks</h3>
+          <ul>
+            <li>Minimum of 3 consecutive shifts for air travel bookings</li>
+            <li>Corporate AMEX card provided for travel arrangements—keep all reward points</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="onboarding">
+    <div class="container">
+      <h2>Onboarding</h2>
+      <ul>
+        <li><strong>Dedicated Program Director</strong> to guide you at every step of your travel journey</li>
+        <li><strong>WOOFware Training</strong> – 2 days of comprehensive system onboarding</li>
+        <li><strong>Shadow Shift</strong> at a new hospital to gain hands-on familiarity before your first independent shift (counts as one shift toward your required period total)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact & Application</h2>
+      <p>Candidates in the <strong>western half</strong> of the U.S. please reach out to <a href="mailto:heather.manion@vca.com" style="color: var(--vca-coral); text-decoration: none; font-weight: bold;">Heather Manion</a>.<br>
+      Candidates in the <strong>eastern half</strong> of the U.S. please reach out to <a href="mailto:nick.silva@vca.com" style="color: var(--vca-coral); text-decoration: none; font-weight: bold;">Nick Silva</a>.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      &copy; 2025 VCA Animal Hospitals. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
